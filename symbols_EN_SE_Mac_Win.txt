@@ -1,0 +1,89 @@
+
+SE-MAC
+
+RCBR -> ^
+AMPR -> //\
+PIPE -> **’
+PERC -> %
+CIRC -> &
+TILD -> >
+ASTR -> (
+LPRN -> )
+RPRN -> ¨^~
+PLUS -> `
+DQT -> Ä
+LT -> ;
+GT -> :
+QUES -> _
+DLR -> €
+AT -> "
+NUHS -> '
+NUBS -> §°¶
+
+SE-WIN
+
+RCBR ->  
+AMPR -> 
+PIPE -> 
+PERC -> 
+CIRC ->
+TILD -> ('half-symbol')
+ASTR -> (
+LPRN -> )
+RPRN -> =
+PLUS -> `
+DQT -> Ä
+LT -> ;
+GT -> :
+QUES -> _
+DLR -> ('scarab'/'currency-sign')
+AT -> "
+NUHS -> ' 
+NUBS ->
+GRV -> 
+
+========================================
+
+EN-MAC
+
+RCBR -> } 
+AMPR -> & 
+PIPE -> |
+PERC -> %
+CIRC -> ^
+TILD -> ~~`
+ASTR -> 
+LPRN -> 
+RPRN -> ]}‘
+PLUS -> ++± 
+DQT -> 
+LT -> 
+GT -> 
+QUES -> 
+DLR -> $
+AT -> @
+NUHS -> 
+NUBS -> §±§
+GRV -> `~`
+
+EN-WIN
+
+RCBR -> ^
+AMPR -> &&‡
+PIPE -> |
+PERC -> %
+CIRC -> ^
+TILD -> ~~`
+ASTR -> 
+LPRN -> 
+RPRN -> ]}‘
+PLUS -> `
+DQT -> 
+LT -> 
+GT -> 
+QUES -> 
+DLR -> $
+AT -> @
+NUHS -> 
+NUBS -> §±§
+GRV ->
