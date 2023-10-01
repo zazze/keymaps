@@ -146,7 +146,7 @@ SE-WIN
 
 [_NAV] = LAYOUT(
    _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                                   KC_HOME,KC_PGDN,KC_PGUP, KC_END,   KC_INS,  KC_PSCR,
-   _______,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10,                                   KC_LEFT,KC_DOWN,  KC_UP,KC_RGHT,  KC_SLCK,  KC_PAUS,
+   _______,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10,                                   KC_LEFT,KC_DOWN,  KC_UP,KC_RGHT,  KC_SCRL,  KC_PAUS,
    _______, KC_F11, KC_F12,KC_VOLD,KC_VOLU, KC_APP,_______,_______,   _______,_______,KC_MS_L,KC_MS_D,KC_MS_U,KC_MS_R,  KC_BTN1,  KC_BTN2,
                            _______,_______,_______,_______,_______,   _______,_______,_______,_______,_______
 		       ),
@@ -210,7 +210,7 @@ SE-MAC
 
 [_NAV] = LAYOUT(
    _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                                   KC_HOME,KC_PGDN,KC_PGUP, KC_END,   KC_INS,  KC_PSCR,
-   _______,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10,                                   KC_LEFT,KC_DOWN,  KC_UP,KC_RGHT,  KC_SLCK,  KC_PAUS,
+   _______,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10,                                   KC_LEFT,KC_DOWN,  KC_UP,KC_RGHT,  KC_SCRL,  KC_PAUS,
    _______, KC_F11, KC_F12,KC_VOLD,KC_VOLU, KC_APP,_______,_______,   _______,_______,KC_MS_L,KC_MS_D,KC_MS_U,KC_MS_R,  KC_BTN1,  KC_BTN2,
                            _______,_______,_______,_______,_______,   _______,_______,_______,_______,_______
 		       ),
@@ -229,7 +229,7 @@ SE-MAC
 [_NUMPAD] = LAYOUT(
    _______,_______,_______,_______,_______,_______,                                   KC_PEQL,KC_P7,KC_P8,KC_P9,  KC_P0,_______,
    _______,_______,_______,_______,_______,_______,                                   KC_PMNS,KC_P4,KC_P5,KC_P6,KC_PAST,_______,
-   _______,_______,KC_PDOT,KC_COMM,KC_PENT,KC_NLCK,_______,_______,   _______,_______,KC_PPLS,KC_P1,KC_P2,KC_P3,KC_PSLS,_______,
+   _______,_______,KC_PDOT,KC_COMM,KC_PENT,KC_NUM,_______,_______,   _______,_______,KC_PPLS,KC_P1,KC_P2,KC_P3,KC_PSLS,_______,
                            _______,_______,_______,_______,_______,   _______,_______,_______,_______,_______
 		   ),
 

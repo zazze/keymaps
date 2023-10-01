@@ -49,6 +49,6 @@
 // #define SPLIT_USB_DETECT
 // #define NO_USB_STARTUP_CHECK
 
-#ifdef ENCODER_ENABLE
-#define ENCODER_RESOLUTIONS {1, 2}
-#endif
+// #ifdef ENCODER_ENABLE
+// #define ENCODER_RESOLUTIONS {1, 2}
+// #endif
