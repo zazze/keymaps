@@ -40,36 +40,17 @@ enum ferris_tap_dances {
   TD_Q_ESC
 };
 
-/* Home row mods left hand */
-
 #define KC_LSHA LSFT_T(KC_A)
-#define KC_GUIS LGUI_T(KC_S)
-#define KC_LALD LALT_T(KC_D)
-#define KC_RALF RALT_T(KC_F)
-
 #define KC_CTLZ LCTL_T(KC_Z)
-
-/* Home row mods right hand */
-#define KC_RALJ RALT_T(KC_J)
-#define KC_LALK LALT_T(KC_K)
-#define KC_GUIL RGUI_T(KC_L)
-#define KC_RSHBSL RSFT_T(KC_BSLS)
-
-#define KC_RCTLBSP RCTL_T(KC_BSPC)
-
-/* Thumb keys left */
+#define KC_RSHCAPS RSFT_T(KC_CAPS)
 #define KC_LMESC LT(_LMOD, KC_ESC)
+#define KC_RCTLBSP RCTL_T(KC_BSPC)
+#define KC_RGUIBSP RGUI_T(KC_BSPC)
 #define KC_NUMTAB LT(_NUM, KC_TAB)
-
-/* Thumb keys right */
-
 #define KC_NAVENT LT(_NAV, KC_ENT)
 #define KC_RMSPC LT(_RMOD, KC_SPC)
 
-/* Not used */
-#define KC_RGUIBSP RGUI_T(KC_BSPC)
 
-#define KC_RSHCAPS RSFT_T(KC_CAPS)
 
 #define KC_CTSC RCTL_T(KC_SCLN)
 #define KC_RLSH RSFT_T(KC_SLSH)
@@ -82,32 +63,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /* 
 _QWERTY Layer RCL=RCTL or RGUI
 EN-MAC/WIN
-,------------------------.             ,--------------------------. 
-|  Q  |  W   | E | R | T |             | Y | U | I |   O  |   P   | 
-|-----+------+---+---+---|             |---+---+---+------+-------| 
-|LSH A|LGUI S| D | F | G |             | H | J | K |RGUI L|RSH CPL| 
-|-----+------+---+---+---|             |---+---+---+------+-------|
-|LCL Z|  X   | C | V | B |             | N | M | ,<|   .> |RCL BSP| 
-`-----+------+---+---+---+----.    ,---+---+---+---+------+-------' 
-             |LMOD ESC|NUM TAB|    |NAV ENT|RMOD SPC| 
-             `----------------'    `----------------'               
+,---------------------.             ,-----------------------. 
+|  Q  | W | E | R | T |             | Y | U | I | O |   P   | 
+|-----+---+---+---+---|             |---+---+---+---+-------| 
+|LSH A| S | D | F | G |             | H | J | K | L |RSH CPL| 
+|-----+---+---+---+---|             |---+---+---+---+-------|
+|LCL Z| X | C | V | B |             | N | M | ,<| .>|RCL BSP| 
+`-----+---+---+---+---+----.    ,---+---+---+---+---+-------' 
+          |LMOD ESC|NUM TAB|    |NAV ENT|RMOD SPC| 
+          `----------------'    `----------------'               
 SE-MAC/WIN
-,------------------------.             ,-------------------------. 
-|  Q  |  W   | E | R | T |             | Y | U | I |   O  |   P  | 
-|----+-----+----+----+---|             |---+---+---+------+------| 
-|LSHA|LGUIS|LALD|RALF| G |             | H |RALJ|LALK|GUIL|RSHAPR| 
-|-----+------+---+---+---|             |---+---+---+------+------|
-|LCL Z|  X   | C | V | B |             | N | M | ,;|   .: |RCLBSP| 
-`-----+------+---+---+---+----.    ,---+---+---+---+------+------' 
-             |LMOD ESC|NUM TAB|    |NAV ENT|RMOD SPC| 
-             `----------------'    `----------------'               
+,---------------------.             ,-----------------------. 
+|  Q  | W | E | R | T |             | Y | U | I | O |   P   | 
+|-----+---+---+---+---|             |---+---+---+---+-------| 
+|LSH A| S | D | F | G |             | H | J | K | L |RSH CPL| 
+|-----+---+---+---+---|             |---+---+---+---+-------|
+|LCL Z| X | C | V | B |             | N | M | ,;| .:|RCL BSP| 
+`-----+---+---+---+---+----.    ,---+---+---+---+---+-------' 
+          |LMOD ESC|NUM TAB|    |NAV ENT|RMOD SPC| 
+	      `----------------'    `----------------'               
 */
 [_QWERTY] = LAYOUT(
-KC_Q,    KC_W,    KC_E, KC_R, KC_T,   KC_Y, KC_U, KC_I,    KC_O,    KC_P,
-KC_LSHA, KC_GUIS, KC_LALD, KC_RALF, KC_G,   KC_H, KC_RALJ, KC_LALK,    KC_GUIL, KC_RSHBSL,
-KC_CTLZ, KC_X,    KC_C, KC_V, KC_B,   KC_N, KC_M, KC_COMM, KC_DOT,  KC_RCTLBSP,
-              KC_LMESC,  KC_NUMTAB,   KC_NAVENT, KC_RMSPC
-),
+    KC_Q,      KC_W,    KC_E,    KC_R,    KC_T,            KC_Y,    KC_U,  KC_I,    KC_O,    KC_P,
+    KC_LSHA,      KC_S,    KC_D,    KC_F,    KC_G,            KC_H,    KC_J,  KC_K,    KC_L,    KC_RSHCAPS,
+    KC_CTLZ,      KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_RCTLBSP,
+//    KC_CTLZ,      KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_RGUIBSP,
+                              KC_LMESC,  KC_NUMTAB,    KC_NAVENT, KC_RMSPC
+  ),
 /* 
 _NUM Layer 
 EN-MAC  
@@ -119,7 +101,7 @@ EN-MAC
 |LCT|   |VOD|VOU|ENT|             | \|| 1!| 2@| 3#| /?| 
 `---+---+---+---+---+---.    ,----+---+---+---+---+---' 
                 |   |   |    |_FUN|_NUMPAD|
-        		`-------'    `------------'		 
+		`-------'    `------------'		 
 EN-WIN  
 ,-------------------.             ,-------------------. 
 |TAB| + | \|| \|| & |             | =+| 7&| 8*| 9(| 0)| 
@@ -151,11 +133,11 @@ SE-MAC
                 |   |   |    |_FUN|_NUMPAD|
 		`-------'    `------------'		 
 */
-[_NUM] = LAYOUT(
-KC_TAB,  M_SEBACKTICK, KC_NUBS, KC_BSLS, KC_AMPR,       KC_EQL,   KC_7, KC_8, KC_9, KC_0,
-KC_LSFT, KC_LGUI, KC_LALT, KC_RALT, KC_ESC,        KC_MINS,  KC_4, KC_5, KC_6, KC_RBRC,
-KC_LCTL, KC_CIRC, KC_VOLD, KC_VOLU, KC_ENT,        KC_GRV,   KC_1, KC_2, KC_3, KC_SLSH, 
-                            _______, _______,      MO(_FUN), MO(_NUMPAD)
+  [_NUM] = LAYOUT(
+    KC_TAB,  M_SEBACKTICK, KC_NUBS, KC_BSLS, KC_AMPR,       KC_EQL,   KC_7, KC_8, KC_9, KC_0,
+    KC_LSFT, KC_LGUI, KC_LALT, KC_RALT, KC_ESC,        KC_MINS,  KC_4, KC_5, KC_6, KC_RBRC,
+    KC_LCTL, KC_CIRC, KC_VOLD, KC_VOLU, KC_ENT,        KC_GRV,   KC_1, KC_2, KC_3, KC_SLSH, 
+                               _______, _______,      MO(_FUN), MO(_NUMPAD)
 		  ),
 /*
 _NAV Layer 

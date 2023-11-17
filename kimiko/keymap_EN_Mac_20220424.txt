@@ -27,7 +27,7 @@ RAISE
 |ESC| F1| F2| F3| F4| F5|             | F6| F7| F8| F9|F10| PrScr |
 |---+---+---+---+---+---|             |---+---+---+---+---+-------|
 |TAB|F11|F12|   |   |   |             |HME|PDN|PUP|END|INS| Pause |
-|---+---+---+---+---+---|             |---+---+---+---+---+-------|
+|---+---+---+---+---+---|             |---+---+---+---+---+-------|55555545c1https://github.com/zazze/keymaps.githttps://github.com/zazze/keymaps.githttps://github.com/zazze/keymaps.githttps://github.com/zazze/keymaps.githttps://github.com/zazze/keymaps.githttps://github.com/zazze/keymaps.gitçdzzeb
 |LSh|   |   |   |   |   |----.    ,---|LFT|DWN| UP|RGT|ScL|       |
 |---+---+---+---+---+---|CAPS|    |DEL|---+---+---+---+---+-------|
 |LCl|   |   |   |   |App|----|    |---|   |   |   |   |   |RSH/ENT|

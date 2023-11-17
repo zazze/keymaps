@@ -1,6 +1,3 @@
-// keymap.c
-// Last edited 2023-05-05
-//
 // Compile with
 // make clean;make splitkb/kyria/rev1:zazze_bling
 // being in the QMK root directory
@@ -65,9 +62,9 @@ EN-MAC/WIN
 |---+---+---+---+---+---|                  |---+---+---+---+---+---|
 |LSh| A | S | D | F | G |                  | H | J | K | L | ;:| '"|
 |---+---+---+---+---+---+-------.  ,---+---+---+---+---+---+---+---|
-|LCl| Z | X | C | V | B |CsL|RAl|  |RAl|Del| N | M | ,<| .>|Bsp|RSh|
+|LCl| Z | X | C | V | B |CsL|RAl|  |RGU|Del| N | M | ,<| .>|Bsp|RSh|
 `-----------+---+---+---+---+---|  |---+---+---+---+---+-----------'
-    (Up|Dwn)|Rsh|LAl|LGU|NUM|Esc|  |Ent|NAV|Spc|RGU|Bsp|(WLft|WRgt)
+    (Up|Dwn)|Rsh|LAl|LGU|NUM|Esc|  |Ent|NAV|Spc|RAl|Bsp|(WLft|WRgt)
             `-------------------'  `-------------------'
 SE-MAC/WIN
 ,-----------------------.                  ,-----------------------.
@@ -75,16 +72,16 @@ SE-MAC/WIN
 |---+---+---+---+---+---|                  |---+---+---+---+---+---|
 |LSh| A | S | D | F | G |                  | H | J | K | L | Ö | Ä |
 |---+---+---+---+---+---+-------.  ,---+---+---+---+---+---+---+---|
-|LCl| Z | X | C | V | B |CsL|RAl|  |RAl|Del| N | M | ,;| .:|Bsp|RSh|
+|LCl| Z | X | C | V | B |CsL|RAl|  |RGU|Del| N | M | ,;| .:|Bsp|RSh|
 `-----------+---+---+---+---+---|  |---+---+---+---+---+-----------'
-    (Up|Dwn)|Rsh|LAl|LGU|NUM|Esc|  |Ent|NAV|Spc|RGU|Bsp|(WLft|WRgt)
+    (Up|Dwn)|Rsh|LAl|LGU|NUM|Esc|  |Ent|NAV|Spc|RAl|Bsp|(WLft|WRgt)
             `-------------------'  `-------------------'
  */
 [_QWERTY] = LAYOUT( 
     KC_TAB,  KC_Q, KC_W,  KC_E, KC_R,  KC_T,                                       KC_Y,   KC_U,    KC_I,   KC_O,    KC_P, KC_LBRC,
     KC_LSFT, KC_A, KC_S,  KC_D, KC_F,  KC_G,                                       KC_H,   KC_J,    KC_K,   KC_L, KC_SCLN, KC_QUOT,
-    KC_LCTL, KC_Z, KC_X,  KC_C, KC_V,  KC_B, KC_CAPS,KC_RALT,  KC_RALT,  KC_DEL,   KC_N,   KC_M, KC_COMM, KC_DOT, KC_BSPC, KC_RSFT,
-                    KC_RSFT,KC_LALT,KC_LGUI,MO(_NUM),KC_ESC,   KC_ENT,MO(_NAV), KC_SPC,KC_RGUI, KC_BSPC
+    KC_LCTL, KC_Z, KC_X,  KC_C, KC_V,  KC_B, KC_CAPS,KC_RALT,  KC_RGUI,  KC_DEL,   KC_N,   KC_M, KC_COMM, KC_DOT, KC_BSPC, KC_RSFT,
+                    KC_RSFT,KC_LALT,KC_LGUI,MO(_NUM),KC_ESC,   KC_ENT,MO(_NAV), KC_SPC,KC_RALT, KC_BSPC
 		    ),
 
 /* 
@@ -97,7 +94,7 @@ EN-MAC
 |---+---+---+---+---+---|-------.  ,-------|---+---+---+---+---+---|
 |   | % | ^ | ~ | ] | _ |NUP|   |  |   |Del| §±| 1!| 2@| 3#| /?|RCl|
 `-------------------------------|  |---+---+---+---+---+-----------' 
-   (MWU|MWD)|Rsh|LAl|LGU|   |Esc|  |PEn|MAC|Spc|RGU|Bsp|(BSP|DEL)
+     (Up|Dn)|   |   |   |   |   |  |PEn|   |   |   |   |(WL|WR)
             `-------------------'  `-------------------'
 EN-WIN
 ,-----------------------.                  ,-----------------------.
@@ -107,7 +104,7 @@ EN-WIN
 |---+---+---+---+---+---|-------.  ,-------|---+---+---+---+---+---|
 |   | % | ^ | ~ | ] | _ |NUP|   |  |   |Del| \|| 1!| 2@| 3#| /?|RCl|
 `-------------------------------|  |---+---+---+---+---+-----------' 
-   (MWU|MWD)|Rsh|LAl|LGU|   |Esc|  |PEn|MAC|Spc|RGU|Bsp|(BSP|DEL)
+     (Up|Dn)|   |   |   |   |   |  |PEn|   |   |   |   |(WL|WR)
             `-------------------'  `-------------------'
 SE-MAC
 ,-----------------------.                  ,-----------------------.
@@ -117,7 +114,7 @@ SE-MAC
 |---+---+---+---+---+---|-------.  ,-------|---+---+---+---+---+---|
 |   | % | & | > | = | ? |NUP|   |  |   |Del| §°|1! |2"@|3#£|-_ |RCl|
 `-------------------------------|  |---+---+---+---+---+-----------'
-   (MWU|MWD)|Rsh|LAl|LGU|   |Esc|  |PEn|MAC|Spc|RGU|Bsp|(BSP|DEL)
+   (MWU|MWD)|   |   |   |   |   |  |PEn|   |   |   |   |(CtlTab|SftCtlTab)
             `-------------------'  `-------------------'
 SE-WIN
 ,-----------------------.                  ,-----------------------.
@@ -127,7 +124,7 @@ SE-WIN
 |---+---+---+---+---+---|-------.  ,-------|---+---+---+---+---+---|
 |   | % | & |hlf| = | ? |NUP|   |  |   |Del|<>||1! |2"@|3#£| -_|RCl|
 `-------------------------------|  |---+---+---+---+---+-----------'
-   (MWU|MWD)|Rsh|LAl|LGU|   |Esc|  |PEn|MAC|Spc|RGU|Bsp|(BSP|DEL)
+   (MWU|MWD)|   |   |   |   |   |  |Pen|   |   |   |   |(CtlTab|SftCtlTab)
             `-------------------'  `-------------------'
 */
 
@@ -148,7 +145,7 @@ SE-WIN
 |---+---+---+---+---+---+-------.  ,-------+---+---+---+---+---+---|
 |   |F11|F12|Vdn|Vup|App|   |   |  |   |   |MLt|Md |MUp|MRt|MB1|RSh|
 `-----------+---+---+---+---+---|  |---+---+---+---+---+-----------'
-   (PgU|PgD)|Rsh|LAl|LGU|NUM|Esc|  |PEn|NAV|Spc|RGU|Bsp|(Bsp|Del)
+   (PgU|PgD)|   |   |   |   |   |  |   |   |   |   |   |(Bsp|Del)
             `-------------------'  `-------------------'
 */
 
@@ -168,7 +165,7 @@ SE-WIN
 |---+---+---+---+---+---+-------.  ,-------+---+---+---+---+---+---|
 |   |   | . | , |PEN|NLK|   |   |  |   |   | + | 1 | 2 | 3 | / |   |
 `-----------+---+---+---+---|---|  |---+---+---+---+---+-----------'
-   (PgU|PgD)|Rsh|LAl|LGU|NUM|Esc|  |PEn|NAV|Spc|RGU|Bsp|(Bsp|Del)
+ (VolU|VolD)|   |   |   |   |   |  |   |   |   |   |   |(Bsp|Del)
             `-------------------'  `-------------------'
 */
 
@@ -188,7 +185,7 @@ SE-WIN
 |---+---+---+---+---+---+-------.  ,-------+---+---+---+---+---+---|
 |   |   |   | []| ""|   |   |   |  |   |   |   |SAD|HUD|VAD|RMD|   |
 `-----------+---+---+---+---|---|  |---+---+---+---+---+-----------'
- (VolU|VolD)|   |   |   |   |   |  |   |   |   |   |   |(RGBVAI|RGBVAD)
+ (VolU|VolD)|   |   |   |   |   |  |   |   |   |   |   |(Bsp|Del)
             `-------------------'  `-------------------'
 */
 [_MACROS] = LAYOUT(

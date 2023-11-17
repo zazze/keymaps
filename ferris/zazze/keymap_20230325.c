@@ -1,3 +1,12 @@
+// Keymap used with chording
+
+// Compile and flash with
+// make ferris/0_2/compact:zazze:flash
+// or 
+// make ferris/0_2/bling:zazze:flash
+// being in the QMK root directory
+
+
 // this is the style you want to emulate.
 // This is the canonical layout file for the Quantum project. If you want to add another keyboard,
 
@@ -18,96 +27,69 @@ enum ferris_layers {
   _NAV
 };
 
-enum custom_keycodes {
-    PLACEHOLDER = SAFE_RANGE,  // can always be here
-    // Macros, where | is the cursor
-    M_SEBACKTICK,
-    M_SE3BACKTICK,
-    M_SETILDE,
-    M_SEHATTILDE,
-//    M_LRBRC,  // [|]
-//    M_LRCBR,  // {|}
-//    M_LRPRN,  // (|)
-//    M_LRABR,  // <|>
-//    M_DQUOT,  // '|'
-//    M_DDQUOT, // "|"
-//    M_DPIPE,  // |||
-    // New keys
-    /* DBL_TAP,  // Repeat next key */
-};
-
 enum ferris_tap_dances {
   TD_Q_ESC
 };
 
-/* Home row mods left hand */
+enum custom_keycodes {
+    SEBTCK = SAFE_RANGE,
+    SETILDE = SAFE_RANGE
+};
 
 #define KC_LSHA LSFT_T(KC_A)
-#define KC_GUIS LGUI_T(KC_S)
-#define KC_LALD LALT_T(KC_D)
-#define KC_RALF RALT_T(KC_F)
-
 #define KC_CTLZ LCTL_T(KC_Z)
+#define KC_RSSC RSFT_T(KC_SCLN)
+#define KC_CTSB CTL_T(KC_RBRC)
 
-/* Home row mods right hand */
-#define KC_RALJ RALT_T(KC_J)
-#define KC_LALK LALT_T(KC_K)
-#define KC_GUIL RGUI_T(KC_L)
-#define KC_RSHBSL RSFT_T(KC_BSLS)
-
-#define KC_RCTLBSP RCTL_T(KC_BSPC)
-
-/* Thumb keys left */
-#define KC_LMESC LT(_LMOD, KC_ESC)
-#define KC_NUMTAB LT(_NUM, KC_TAB)
-
-/* Thumb keys right */
-
-#define KC_NAVENT LT(_NAV, KC_ENT)
-#define KC_RMSPC LT(_RMOD, KC_SPC)
-
-/* Not used */
-#define KC_RGUIBSP RGUI_T(KC_BSPC)
-
-#define KC_RSHCAPS RSFT_T(KC_CAPS)
-
-#define KC_CTSC RCTL_T(KC_SCLN)
-#define KC_RLSH RSFT_T(KC_SLSH)
 #define KC_SPM2 LT(2, KC_SPC)
 #define KC_BSM1 LT(1, KC_BSPC)
 #define KC_GUTA GUI_T(KC_TAB)
 #define KC_CLGV CTL_T(KC_GRV)
 
+#define KC_ENNAV LT(_NAV, KC_ENT)
+#define KC_BSNUM LT(_NUM, KC_BSPC)
+#define KC_SPALT ALT_T(KC_SPC)
+#define KC_RSHCAPS RSFT_T(KC_CAPS)
+#define KC_RCTLBSP RCTL_T(KC_BSPC)
+#define KC_RGUIBSP RGUI_T(KC_BSPC)
+#define KC_LMESC LT(_LMOD, KC_ESC)
+#define KC_NUMTAB LT(_NUM, KC_TAB)
+#define KC_NAVENT LT(_NAV, KC_ENT)
+#define KC_RMSPC LT(_RMOD, KC_SPC)
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
- /* 
-_QWERTY Layer RCL=RCTL or RGUI
+
+/* 
+_QWERTY Layer RC=RCTL or RGUI
 EN-MAC/WIN
-,------------------------.             ,--------------------------. 
-|  Q  |  W   | E | R | T |             | Y | U | I |   O  |   P   | 
-|-----+------+---+---+---|             |---+---+---+------+-------| 
-|LSH A|LGUI S| D | F | G |             | H | J | K |RGUI L|RSH CPL| 
-|-----+------+---+---+---|             |---+---+---+------+-------|
-|LCL Z|  X   | C | V | B |             | N | M | ,<|   .> |RCL BSP| 
-`-----+------+---+---+---+----.    ,---+---+---+---+------+-------' 
-             |LMOD ESC|NUM TAB|    |NAV ENT|RMOD SPC| 
-             `----------------'    `----------------'               
+,-------------------.             ,----------------------. 
+| Q | W | E | R | T |             | Y | U | I | O |  P   | 
+|---+---+---+---+---|             |---+---+---+---+------| 
+| A | S | D | F | G |             | H | J | K | L | RSH  | 
+|---+---+---+---+---|             |---+---+---+---+------|
+| Z | X | C | V | B |             | N | M | ,<| .>|RC BSP| 
+`---+---+---+---+---+----.    ,---+---+---+---+---+------' 
+        |LMOD ESC|NUM TAB|    |NAV ENT|RMOD SPC| 
+	    `----------------'    `----------------'               
 SE-MAC/WIN
-,------------------------.             ,-------------------------. 
-|  Q  |  W   | E | R | T |             | Y | U | I |   O  |   P  | 
-|----+-----+----+----+---|             |---+---+---+------+------| 
-|LSHA|LGUIS|LALD|RALF| G |             | H |RALJ|LALK|GUIL|RSHAPR| 
-|-----+------+---+---+---|             |---+---+---+------+------|
-|LCL Z|  X   | C | V | B |             | N | M | ,;|   .: |RCLBSP| 
-`-----+------+---+---+---+----.    ,---+---+---+---+------+------' 
-             |LMOD ESC|NUM TAB|    |NAV ENT|RMOD SPC| 
-             `----------------'    `----------------'               
+,-------------------.             ,----------------------. 
+| Q | W | E | R | T |             | Y | U | I | O |  P   | 
+|---+---+---+---+---|             |---+---+---+---+------| 
+| A | S | D | F | G |             | H | J | K | L | RSH  | 
+|---+---+---+---+---|             |---+---+---+---+------|
+| Z | X | C | V | B |             | N | M | ,;| .:|RC BSP| 
+`---+---+---+---+---+----.    ,---+---+---+---+---+------' 
+        |LMOD ESC|NUM TAB|    |NAV ENT|RMOD SPC| 
+	    `----------------'    `----------------'               
 */
 [_QWERTY] = LAYOUT(
-KC_Q,    KC_W,    KC_E, KC_R, KC_T,   KC_Y, KC_U, KC_I,    KC_O,    KC_P,
-KC_LSHA, KC_GUIS, KC_LALD, KC_RALF, KC_G,   KC_H, KC_RALJ, KC_LALK,    KC_GUIL, KC_RSHBSL,
-KC_CTLZ, KC_X,    KC_C, KC_V, KC_B,   KC_N, KC_M, KC_COMM, KC_DOT,  KC_RCTLBSP,
-              KC_LMESC,  KC_NUMTAB,   KC_NAVENT, KC_RMSPC
-),
+    KC_Q,      KC_W,    KC_E,    KC_R,    KC_T,            KC_Y,    KC_U,  KC_I,    KC_O,    KC_P,
+    KC_A,      KC_S,    KC_D,    KC_F,    KC_G,            KC_H,    KC_J,  KC_K,    KC_L,    KC_RSFT,
+//    KC_Z,      KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_RCTLBSP,
+    KC_Z,      KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_RGUIBSP,
+                              KC_LMESC,  KC_NUMTAB,    KC_NAVENT, KC_RMSPC
+  ),
 /* 
 _NUM Layer 
 EN-MAC  
@@ -119,7 +101,7 @@ EN-MAC
 |LCT|   |VOD|VOU|ENT|             | \|| 1!| 2@| 3#| /?| 
 `---+---+---+---+---+---.    ,----+---+---+---+---+---' 
                 |   |   |    |_FUN|_NUMPAD|
-        		`-------'    `------------'		 
+		        `-------'    `------------'		 
 EN-WIN  
 ,-------------------.             ,-------------------. 
 |TAB| + | \|| \|| & |             | =+| 7&| 8*| 9(| 0)| 
@@ -129,79 +111,79 @@ EN-WIN
 |LCT| ^ |VOD|VOU|ENT|             | `~| 1!| 2@| 3#| /?|
 `---+---+---+---+---+---.    ,----+---+---+---+---+---' 
                 |   |   |    |_FUN|_NUMPAD|
-		`-------'    `------------'		 
+	        	`-------'    `------------'		 
 SE-WIN
 ,-------------------.             ,-------------------. 
-|TAB| ` |<>|| '*| / |             | ´`|7/{|8([| 9]|0=}| 
+|TAB| ` |<>|| '*| ~ |             | ´`|7/{|8([| 9]|0=}| 
 |---+---+---+---+---|             |---+---+---+---+---|
 |LSH|LGU|LAL|RAL|ESC|             |+?\| 4$|5%€| 6^|¨^~|
 |-------+---+---+---|             |---+---+---+---+---|
 |LCT| & |VOD|VOU|ENT|             | §½| 1!|2"@|3#£|-_ | 
 `---+---+---+---+---+---.    ,----+---+---+---+---+---' 
                 |   |   |    |_FUN|_NUMPAD|
-		`-------'    `------------'		 
+                `-------'    `------------'		 
 SE-MAC 
 ,-------------------.             ,-------------------. 
-|TAB|   | §°| '*| / |             | ´`|7/||8([|9)]|0= | 
+|TAB| ` | §°| '*| ~ |             | ´`|7/||8([|9)]|0= | 
 |---+---+---+---+---|             |---+---+---+---+---|
 |LSH|LGU|LAL|RAL|ESC|             | +?|4€ |5 %|6& |¨^~|
 |-------+---+---+---|             |---+---+---+---+---|
 |LCT| & |VOD|VOU|ENT|             | <>|1! |2"@|3# |-_ | 
 `---+---+---+---+---+---.    ,----+---+---+---+---+---' 
                 |   |   |    |_FUN|_NUMPAD|
-		`-------'    `------------'		 
+                `-------'    `------------'		 
 */
-[_NUM] = LAYOUT(
-KC_TAB,  M_SEBACKTICK, KC_NUBS, KC_BSLS, KC_AMPR,       KC_EQL,   KC_7, KC_8, KC_9, KC_0,
-KC_LSFT, KC_LGUI, KC_LALT, KC_RALT, KC_ESC,        KC_MINS,  KC_4, KC_5, KC_6, KC_RBRC,
-KC_LCTL, KC_CIRC, KC_VOLD, KC_VOLU, KC_ENT,        KC_GRV,   KC_1, KC_2, KC_3, KC_SLSH, 
-                            _______, _______,      MO(_FUN), MO(_NUMPAD)
+  [_NUM] = LAYOUT(
+    KC_TAB,  SEBTCK,  KC_NUBS, KC_BSLS, SETILDE,       KC_EQL,   KC_7, KC_8, KC_9, KC_0,
+    KC_LSFT, KC_LGUI, KC_LALT, KC_RALT, KC_ESC,        KC_MINS,  KC_4, KC_5, KC_6, KC_RBRC,
+    KC_LCTL, KC_CIRC, KC_VOLD, KC_VOLU, KC_ENT,        KC_GRV,   KC_1, KC_2, KC_3, KC_SLSH, 
+                               _______, _______,      MO(_FUN), MO(_NUMPAD)
 		  ),
 /*
 _NAV Layer 
 EN-MAC
 ,-------------------.             ,-------------------. 
-|TAB|+++|MB1|MB2|SPC|             |HME|PDN|PUP|END| [{| 
+|TAB| §±|MB1|MB2|SPC|             |HME|PDN|PUP|END| [{| 
 |---+---+---+---+---|             |---+---+---+---+---| 
 |LSH|LGU|LAL|RAL|ESC|             |LFT|DWN|LFT|RGT| ;:|
 |-------+---+---+---|             |---+---+---+---+---| 
 |LCL|CAP|DEL|BSP|ENT|             |ML |MDN|MUP|MR | '"| 
 `---+---+---+---+---+----.    ,---+---+---+---+---+---' 
                 |   |_FUN|    |   |   | 
-		`--------'    `-------'		 
+		        `--------'    `-------'		 
 EN-WIN
 ,-------------------.             ,-------------------. 
-|TAB|+++|MB1|MB2|SPC|             |HME|PDN|PUP|END| [{| 
+|TAB| ~ |MB1|MB2|SPC|             |HME|PDN|PUP|END| [{| 
 |---+---+---+---+---|             |---+---+---+---+---| 
 |LSH|LGU|LAL|RAL|ESC|             |LFT|DWN|LFT|RGT| ;:|
 |-------+---+---+---|             |---+---+---+---+---| 
 |LCL|CAP|DEL|BSP|ENT|             |ML |MDN|MUP|MR | '"| 
 `---+---+---+---+---+----.    ,---+---+---+---+---+---' 
                 |   |_FUN|    |   |   | 
-		`--------'    `-------'		 
+		        `--------'    `-------'		 
 SE-MAC
 ,-------------------.             ,-------------------. 
-|TAB|```|MB1|MB2|SPC|             |HME|PDN|PUP|END| Å | 
+|TAB| ½ |MB1|MB2|SPC|             |HME|PDN|PUP|END| Å | 
 |---+---+---+---+---|             |---+---+---+---+---| 
 |LSH|LGU|LAL|RAL|ESC|             |LFT|DWN|LFT|RGT| Ö |
 |-------+---+---+---|             |---+---+---+---+---| 
 |LCL|CAP|DEL|BSP|ENT|             |ML |MDN|MUP|MR | Ä | 
 `---+---+---+---+---+----.    ,---+---+---+---+---+---' 
                 |   |_FUN|    |   |   | 
-		`--------'    `-------'		 
+		        `--------'    `-------'		 
 SE-WIN
 ,-------------------.             ,-------------------. 
-|TAB|```|MB1|MB2|SPC|             |HME|PDN|PUP|END| Å | 
+|TAB|hlf|MB1|MB2|SPC|             |HME|PDN|PUP|END| Å | 
 |---+---+---+---+---|             |---+---+---+---+---| 
 |LSH|LGU|LAL|RAL|ESC|             |LFT|DWN|LFT|RGT| Ö |
 |-------+---+---+---|             |---+---+---+---+---| 
 |LCL|CAP|DEL|BSP|ENT|             |ML |MDN|MUP|MR | Ä | 
 `---+---+---+---+---+----.    ,---+---+---+---+---+---' 
                 |   |_FUN|    |   |   | 
-		`--------'    `-------'		 
+		        `--------'    `-------'		 
 */
 [_NAV] = LAYOUT( 
-   KC_TAB,  M_SE3BACKTICK, KC_BTN1, KC_BTN2,  KC_SPC,        KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LBRC,
+   KC_TAB,  KC_TILDE, KC_BTN1, KC_BTN2,  KC_SPC,        KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LBRC,
    KC_LSFT, KC_LGUI,  KC_LALT, KC_RALT,  KC_ESC,        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_SCLN,
    KC_LCTL, KC_CAPS,  KC_DEL,  KC_BSPC,  KC_ENT,        KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_QUOT,
                                _______, MO(_FUN),     _______, _______
@@ -286,50 +268,24 @@ _FUN Layer
 
 };
 
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed) {
-        switch (keycode) {
-            case M_SEBACKTICK:
-                SEND_STRING("+ ");
-                return(false);
-            case M_SE3BACKTICK:
-                SEND_STRING("+++ ");
-                return(false);
-            case M_SEHATTILDE:
-                SEND_STRING("¨ ");
-                return(false);
-//            case M_LRPRN:
-//                SEND_STRING("()" SS_TAP(X_LEFT));
-//                return false;
-//            case M_LRCBR:
-//                SEND_STRING("{}" SS_TAP(X_LEFT));
-//                return false;
-//            case M_LRBRC:
-//                SEND_STRING("[]" SS_TAP(X_LEFT));
-//                return false;
-//            case M_LRABR:
-//                SEND_STRING("<>" SS_TAP(X_LEFT));
-//                return false;
-//            case M_DQUOT:
-//                SEND_STRING("''" SS_TAP(X_LEFT));
-//                return false;
-//            case M_DDQUOT:
-//                SEND_STRING("\"\"" SS_TAP(X_LEFT));
-//                return false;
-//            case M_DPIPE:
-//                SEND_STRING("||" SS_TAP(X_LEFT));
-//                return false;
-        }
-
-    }
-    
-    return true;
-}
-
-
 // Tap Dance Definitions
-tap_dance_action_t tap_dance_actions[] = {
+qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Q, twice for ESC
     [TD_Q_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC)
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  switch (keycode) {
+    case SEBTCK:  
+      if (record->event.pressed) {
+        SEND_STRING("`");
+      }
+      return false;
+    case SETILDE:
+      if (record->event.pressed) {
+          SEND_STRING("~");
+      }
+  }
+  return true;
+}
+
