@@ -1,5 +1,5 @@
 // Compile and flash with
-// make splitkb/kyria/rev1:zazze_allkeys:flash
+// make splitkb/kyria:zazze_allkeys:flash
 // being in the QMK root directory
 
 /* Copyright 2019 Thomas Baart <thomas@splitkb.com>
@@ -15,10 +15,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #include QMK_KEYBOARD_H
+
+/* uint16_t copy_paste_timer; */
 
 enum custom_keycodes {
     PLACEHOLDER = SAFE_RANGE,  // can always be here
@@ -42,28 +43,12 @@ enum layers {
     _MACROS
 };
 
+/* enum custom_keycodes { */
+/*     KC_CCCV = SAFE_RANGE */
+/* }; */
 
-// Aliases for readability
-#define QWERTY   DF(_QWERTY)
-#define COLEMAK  DF(_COLEMAK_DH)
-#define DVORAK   DF(_DVORAK)
-
-#define SYM      MO(_SYM)
-#define NAV      MO(_NAV)
-#define FKEYS    MO(_FUNCTION)
-#define ADJUST   MO(_ADJUST)
-
-#define CTL_ESC  MT(MOD_LCTL, KC_ESC)
-#define CTL_QUOT MT(MOD_RCTL, KC_QUOTE)
-#define CTL_MINS MT(MOD_RCTL, KC_MINUS)
-#define ALT_ENT  MT(MOD_LALT, KC_ENT)
-
-// Note: LAlt/Enter (ALT_ENT) is not the same thing as the keyboard shortcut Alt+Enter.
-// The notation `mod/tap` denotes a key that activates the modifier `mod` when held down, and
-// produces the key `tap` when tapped (i.e. pressed and released).
-
-// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
 /*
  * _QWERTY
 EN-WIN
@@ -93,6 +78,7 @@ SE-WIN SE-MAC
     KC_LCTL, KC_Z, KC_X,  KC_C, KC_V,  KC_B, KC_CAPS,KC_RALT,  KC_RGUI,  KC_DEL,   KC_N,   KC_M, KC_COMM, KC_DOT, KC_BSPC, KC_RSFT,
                     KC_RSFT,KC_LALT,KC_LGUI,MO(_NUM),KC_ESC,   KC_ENT,MO(_NAV), KC_SPC,KC_RALT, KC_BSPC
 		    ),
+
 /* 
 * _NUM: Function keys, Symbols, Numbers
 EN-MAC
@@ -267,6 +253,37 @@ SE-MAC
     )
 
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch (keycode) {
+            case M_LRPRN:
+                SEND_STRING("()" SS_TAP(X_LEFT));
+                return false;
+            case M_LRCBR:
+                SEND_STRING("{}" SS_TAP(X_LEFT));
+                return false;
+            case M_LRBRC:
+                SEND_STRING("[]" SS_TAP(X_LEFT));
+                return false;
+            case M_LRABR:
+                SEND_STRING("<>" SS_TAP(X_LEFT));
+                return false;
+            case M_DQUOT:
+                SEND_STRING("''" SS_TAP(X_LEFT));
+                return false;
+            case M_DDQUOT:
+                SEND_STRING("\"\"" SS_TAP(X_LEFT));
+                return false;
+            case M_DPIPE:
+                SEND_STRING("||" SS_TAP(X_LEFT));
+                return false;
+        }
+
+    }
+    
+    return true;
+}
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _NUM, _NAV, _MACROS);
