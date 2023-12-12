@@ -35,3 +35,9 @@
 #    endif
 #endif
 
+#ifdef ENCODER_ENABLE
+  #define ENCODER_DIRECTION_FLIP
+  #define ENCODER_RESOLUTION 1
+#endif
+
+
